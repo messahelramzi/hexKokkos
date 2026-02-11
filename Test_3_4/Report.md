@@ -47,6 +47,8 @@ For comparison of the different hardware architectures, programming models (back
 
 The following logs show the convergence history for both GPU and CPU executions. The relative error (||r_k|| / ||b||) decreases steadily, with convergence achieved in 119 iterations for both backends, demonstrating correctness and consistent behavior across architectures. One can also see that not only code and performance were ported but also the convergence history (errors), which is a good sign of correctness and consistency across backends.
 
+As the mesh is refined, the number of iterations increases as expected for a simple Jacobi preconditioner. The condition number of the Poisson matrix grows with the mesh size $\mathcal{O}(h^{-2})$, leading to slower convergence. 
+
 <img src="./images/console_log.png" alt="Console log" width="800" height="400">
 
 <img src="./images/convergence.png" alt="Console log" width="800" height="400">
