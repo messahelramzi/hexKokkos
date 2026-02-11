@@ -8,7 +8,7 @@ The codes should run on theory on any architecture supported by Kokkos (also Int
 
 **Completed tests**
 
-- [ ] Test 1: Condition number of a matrix (CPU OpenMP + GPU CUDA) using power iteration method.
+- [x] Test 1: Condition number of a matrix (CPU OpenMP + GPU CUDA) using power iteration method.
 - [x] Test 2: Dense MatVec (CPU OpenMP + GPU CUDA)
 - [x] Test 3 & 4: PCG with Jacobi preconditioner (CPU OpenMP + GPU CUDA)
 
