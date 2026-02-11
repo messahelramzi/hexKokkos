@@ -8,7 +8,6 @@ int main(int argc, char* argv[]) {
     std::string execution_space = "device";
     std::string matrix_file = "A.csv";
     std::string vector_file = "b.csv";
-    int nrepeat = 1;
     std::string view_layout = "none";
     std::string view_layout_in = "none";
     double lambda_max = std::numeric_limits<double>::min();
@@ -22,8 +21,6 @@ int main(int argc, char* argv[]) {
         ->default_val("A.csv");
     app.add_option("--vector", vector_file, "Path to vector CSV file")
         ->default_val("b.csv");
-    app.add_option("--nrepeat", nrepeat, "Number of repetitions")
-        ->default_val("100");
     app.add_option("--view_layout", view_layout_in, "Default view layout")
         ->default_val("none");
 
@@ -57,7 +54,6 @@ int main(int argc, char* argv[]) {
         std::cout << "Execution space: " << execution_space << std::endl;
         std::cout << "Matrix file: " << matrix_file << std::endl;
         std::cout << "Vector file: " << vector_file << std::endl;
-        std::cout << "Repetitions: " << nrepeat << std::endl;
         std::cout << "Default view layout: " << view_layout << std::endl;
         std::cout << "=====================================" << std::endl;
         std::cout << std::endl;
@@ -106,6 +102,7 @@ int main(int argc, char* argv[]) {
         std::cout << "Estimated smallest eigenvalue: " << lambda_min << std::endl;
         std::cout << "Estimated condition number: " << lambda_max / lambda_min
                   << std::endl;
+        std::cout << "elapsed time: " << elapsed << " seconds" << std::endl;
     }  // End of Kokkos scope
     Kokkos::finalize();
 
